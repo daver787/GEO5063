@@ -1,11 +1,11 @@
-%load the data.txt file
+%1)load the data.txt file
 load data.txt;
 i=transpose(1:828);
 nino_3=data(:,5);
 nino3_4=data(:,9);
 
-%plot nino3 vs.time vector
-plot(i,nino_3);
+%2)plot nino3 vs.time vector
+plot(i,nino_3,'Color','blue');
 xlabel('Time(months)')
 ylabel('SST(deg C)')
 hold on
@@ -19,14 +19,14 @@ ylim([22,30])
 range_nin03=max_nino3-min_nino3;
 range_nin034=max_nino34-min_nino34;
 
-%plot the max and min values for nino3
+%2)plot the max and min values for nino3
 hold on
 plot(index_max_nino3,max_nino3,'*','Color','black')
 plot(index_min_nino3,min_nino3,'*','Color','black')
 legend('nino3','nino3.4','max','min')
 title('SST over time')
 
-% compute a 2-panel plot of histogram of Nino3 using Matlab function
+% 3)compute a 2-panel plot of histogram of Nino3 using Matlab function
 % histogram
 figure
 subplot(2,1,1);
@@ -38,7 +38,36 @@ histogram(nino_3,28);
 xlabel('Temperature(deg C)');
 ylabel('Frequency');
 
-%Create a scatter plot of Nino3.4(y-axis) vs Nino3(x-axis)
+%4)Create a scatter plot of Nino3.4(y-axis) vs Nino3(x-axis)
 figure
 scatter(nino_3,nino3_4);
 axis([24 30 24 30]);
+
+%5) Create a one panel time series of SST anomalies
+figure
+nino_3_anom=data(:,6);
+nino3_4_anom=data(:,10);
+plot(i,nino_3_anom,'Color','blue');
+hold on
+plot(i,nino3_4_anom,'--','Color','red');
+legend('nino3 anomalies','nino3.4 anomalies');
+title('SST anomalies over time');
+
+%6) Create a one figure seasonal cycle from difference
+figure
+diff_nino3=nino_3-nino_3_anom;
+diff_nino3_4=nino3_4-nino3_4_anom;
+plot(i,diff_nino3,i,diff_nino3_4)
+ylim([22,30])
+xlabel('Time(months)')
+ylabel(' difference SST(deg C)');
+
+%7)Create a map of the world using coastmap
+%landscape();
+figure
+%portrait();
+%landscape;
+hold on
+boxdraw([210,270,-5,5],'blue');
+boxdraw([190,240,-5,5],'red','r--');
+coastmap([0 360 -60 60],40,'fill');
