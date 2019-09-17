@@ -23,14 +23,11 @@ coastmap([min(lon),max(lon),min(lat),max(lat)],40)
 %make the plot for july
 figure
 h=pcolor(lon,lat,julysstnan');
-
-%compute the global mean
-h=pcolor(lon,lat,julysstnan');
 set(h,'EdgeColor','none');
 colorbar;
 hold on
 coastmap([min(lon),max(lon),min(lat),max(lat)],40);
 
+%compute global mean of jansstnan
 global_mean=mean(jansstnan,'all','omitnan');
-global_mean2=mean(jansstnan,360,'omitnan');
 
