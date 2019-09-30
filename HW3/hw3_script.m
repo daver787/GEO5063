@@ -19,6 +19,11 @@ ci_interval=[lft_ci,rgt_ci];
 nu=length(nino_3)-1;
 min_var=(nu*var_nino3)/chi2inv(0.975,nu);
 max_var=(nu*var_nino3)/chi2inv(0.025,nu);
+var_interval=[min_var,max_var];
+
+%confidence interval for standard deviation(used for problem 2c)
+sigma_interval=sqrt(var_interval);
+
 
 %compute histogram with normal distribution overlaid of nino3
 histfit(nino_3);
@@ -27,10 +32,16 @@ histfit(nino_3);
 %deviation for nino3
 [muHat_nino3,sigmaHat_nino3,muCI_nino3,sigmaCI_nino3]  =normfit(nino_3,.05);
 
-
+%compute norm fit at 95 percent confidence interval for mean and standard
+%deviation for nino3.4
 [muHat_nino3_4,sigmaHat_nino3_4,muCI_nino3_4,sigmaCI_nino3_4]  =normfit(nino_3_4,.05);
 
+%compute norm fit at 95 percent confidence interval for mean and standard
+%deviation for nino1.2
 [muHat_nino1_2,sigmaHat_nino1_2,muCI_nino1_2,sigmaCI_nino1_2]  =normfit(nino_1_2,.05);
 
-[muHat_nino3_10,sigmaHat_nino3_10,muCI_nino3_10,sigmaCI_nino3_10]  =normfit(nino_3,.05);
+
+%compute norm fit at 90 percent confidence interval for mean and standard
+%deviation for nino3
+[muHat_nino3_10,sigmaHat_nino3_10,muCI_nino3_10,sigmaCI_nino3_10]  =normfit(nino_3,.10);
 
