@@ -16,8 +16,19 @@ count=1
 for i=(1:30)
     M(i,:)=nino3(count:(12*i));
     count=count+12;
-end 
+end
 
+%use repmeat to plot periodic seasonal cycle from 1981-2010
 N=mean(M)
-P=repmat(N,[1,30]);
-pl
+p=repmat(N,[1,30]);
+figure;
+plot(time_vector,p);
+axis([1980 2012 23 30]);
+
+%compute Nino3 SST anomaly time series by subtracting periodic trend
+no_seasonal=(nino3'-p)';
+figure
+plot(time_vector,no_seasonal)
+axis([1980 2012 -2 4])
+
+%plot Nino3 anomaly time series and our compute
