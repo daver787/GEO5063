@@ -1,4 +1,4 @@
-% Create a data set that uses the years 1981-2010
+ % Create a data set that uses the years 1981-2010
 load data.txt
 yr=data(:,1);
 ikeep=find(yr>=1981 & yr<=2010);
