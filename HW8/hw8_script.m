@@ -35,6 +35,6 @@ title('Figure 2')
 LLSE=ster(TSA,TNA);
 RCRIT=2*LLSE
 NSTAR=1/(LLSE^2)
-%correaltion coefficent is not significant since it is below RCRIT
+%correlation coefficent is not significant since it is below RCRIT
 
 
