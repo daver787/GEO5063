@@ -34,8 +34,8 @@ m_gshhs_f('patch',[0.75 0.75 0.75],'edgecolor','none');
 m_grid('ticklen',0.02,'linestyle','none');
 cbar=colorbar('Location','EastOutside','YAxisLocation','right','fontsize',10,'fontweight','normal');
 ylabel(cbar,'Depth (m)');
-
-%plot the 200-m isobath as a black solid contour\
+% 
+% %plot the 200-m isobath as a black solid contour\
 hold on
 [C,h_cont]=m_contour(lon,lat,depth,[-200,-200]);
 set(h_cont,'color','k','linewidth',0.5);
