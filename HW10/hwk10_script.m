@@ -34,7 +34,7 @@ m_gshhs_f ('color','k');
 shading interp
 set(h_surf,'edgecolor','none')
 set(gca,'fontsize',16,'fontweight','normal')
-%colormap('summer')
+colormap('jet')
 
 m_grid('ticklen',0.02,'linestyle','none');
 cbar=colorbar('Location','EastOutside','YAxisLocation','right','fontsize',10,'fontweight','normal');
@@ -56,7 +56,7 @@ m_gshhs_f ('color','k');
 shading interp
 set(h_surf,'edgecolor','none')
 set(gca,'fontsize',16,'fontweight','normal')
-%colormap('summer')
+colormap('jet')
 
 m_grid('ticklen',0.02,'linestyle','none');
 cbar=colorbar('Location','EastOutside','YAxisLocation','right','fontsize',10,'fontweight','normal');
