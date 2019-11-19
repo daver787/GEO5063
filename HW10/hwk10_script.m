@@ -60,5 +60,5 @@ colormap('jet')
 
 m_grid('ticklen',0.02,'linestyle','none');
 cbar=colorbar('Location','EastOutside','YAxisLocation','right','fontsize',10,'fontweight','normal');
-%label the colorbar as 'CHL(mg/m^3)'
+%label the colorbar as 'log[CHL(mg/m^3)]'
 ylabel(cbar,'log[CHL (mg/m^3)]');
