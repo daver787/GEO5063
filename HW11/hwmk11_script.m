@@ -45,8 +45,9 @@ axis([1 12 -10 10]);
 grid;
 
 %3d) Label EOF time series as EOF1(X%) and EOF2(Y%)
-xlabel('EOF1 (X%)');
-ylabel('EOF2 (Y%)');
+EOF1_perc=expl_var(1);
+EOF2_perc=expl_var(2);
+legend('EOF1(68.30%)','EOF2(15.03%)');
 
 %4a)Set inputs to m_datamap
 dx=0.25;
