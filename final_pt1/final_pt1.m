@@ -75,7 +75,7 @@ time_vec=taxgen(199801,200912)
 %Make a two panel plot with first EOF time series in upper panel and
 %second EOF time series on the lower panel
 figure;
-sgtitle('First two EOF modes');
+sgtitle('First two EOF time series');
 subplot(2,1,1)
 plot(time_vec,EOFt1);
 xticks(1998:1:2010);
@@ -99,6 +99,7 @@ xyz2=[lon' lat' EOFs(:,2)];
 
 %5b)Map EOF1 space pattern 
 figure;
+sgtitle('First two EOF space patterns');
 subplot(1,2,1);
 [h_surf,h_cbar]=m_datamap(xyz1,dx,dy,v,cax,ramp);
 title('EOF space pattern 1');
